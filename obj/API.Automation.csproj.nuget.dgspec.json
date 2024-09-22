@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\API.Automation\\API.Automation.csproj": {}
+    "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\API.Automation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\API.Automation\\API.Automation.csproj": {
+    "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\API.Automation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\API.Automation\\API.Automation.csproj",
+        "projectUniqueName": "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\API.Automation.csproj",
         "projectName": "API.Automation",
-        "projectPath": "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\API.Automation\\API.Automation.csproj",
+        "projectPath": "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\API.Automation.csproj",
         "packagesPath": "C:\\Users\\EugeneGushcha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\API.Automation\\obj\\",
+        "outputPath": "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\EugeneGushcha\\AppData\\Roaming\\NuGet\\NuGet.Config",

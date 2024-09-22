@@ -21,6 +21,14 @@ namespace API.Automation
             
         }
 
+        public async Task<RestResponse> GetListofUsers(int minAge, int maxAge)
+        {
+            var request = new RestRequest(Endpoints.GET_LIST_OF_USERS, Method.Get);
+            request.AddQueryParameter("olderThan", minAge);
+            request.AddQueryParameter("youngerThan", maxAge);
+            return await client.ExecuteAsync(request);
+        }
+
         public async Task<RestResponse> CreateUser<T>(T payload) where T : class
         {
             var request = new RestRequest(Endpoints.CREATE_USER, Method.Post);
@@ -28,10 +36,31 @@ namespace API.Automation
             return await client.ExecuteAsync<T>(request);
         }
 
-        public async Task<RestResponse> DeleteUser(string id)
+        public async Task<RestResponse> UpdateUser<T>(T payload) where T : class
+        {
+            var request = new RestRequest(Endpoints.UPDATE_USER, Method.Put);
+            request.AddBody(payload);
+            return await client.ExecuteAsync<T>(request);
+        }
+
+        public async Task<RestResponse> DeleteUser<T>(T payload) where T : class
         {
             var request = new RestRequest(Endpoints.DELETE_USER, Method.Delete);
-            request.AddUrlSegment(id, id);
+            request.AddBody(payload);
+            return await client.ExecuteAsync(request);
+        }
+
+        public async Task<RestResponse> PatchUpdateUser<T>(T payload) where T : class
+        {
+            var request = new RestRequest(Endpoints.PATCH_UPDATE_USER, Method.Patch);
+            request.AddBody(payload);
+            return await client.ExecuteAsync<T>(request);
+        }
+
+        public async Task<RestResponse> UploadUsers(String file, DataFormat dataFormat)
+        {
+            var request = new RestRequest(Endpoints.UPLOAD_USERS, Method.Post);
+            request.AddStringBody(file, dataFormat);
             return await client.ExecuteAsync(request);
         }
 
@@ -39,31 +68,6 @@ namespace API.Automation
         {
             client?.Dispose();
             GC.SuppressFinalize(this);
-        }
-
-        public Task<RestResponse> GetListofUsers(int minAge, int maxAge)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<RestResponse> PatchUpdateUser<T>(T payload, string id) where T : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<RestResponse> UpdateUser<T>(T payload, string id) where T : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<RestResponse> UploadUsers<T>(T payload) where T : class
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<RestResponse> IAPIClient.DeleteUser<T>(string id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

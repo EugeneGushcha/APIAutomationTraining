@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dljb97H4QlI=",
+  "dgSpecHash": "sT+gguUugXM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\API.Automation\\API.Automation.csproj",
+  "projectFilePath": "C:\\Users\\EugeneGushcha\\source\\repos\\API.Automation.Training\\API.Automation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EugeneGushcha\\.nuget\\packages\\microsoft.codecoverage\\17.11.1\\microsoft.codecoverage.17.11.1.nupkg.sha512",
     "C:\\Users\\EugeneGushcha\\.nuget\\packages\\microsoft.net.test.sdk\\17.11.1\\microsoft.net.test.sdk.17.11.1.nupkg.sha512",

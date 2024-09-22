@@ -18,7 +18,7 @@ namespace API.Automation.Auth
 
         public APIAuthenticator() : base("")
         {
-            //TBD  upd2
+            //TBD
         }
         protected override async ValueTask<Parameter> GetAuthenticationParameter(string accessToken)
         {
