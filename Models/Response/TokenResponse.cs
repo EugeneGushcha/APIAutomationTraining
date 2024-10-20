@@ -8,8 +8,8 @@ namespace API.Automation.Models.Response
 {
     public class TokenResponse
     {
-        public enum TokenType;  //Bearer token
-        public enum AccessToken; //Alpha numeric value
-        public enum Scope;
+        public string TokenType { get; set; }  //Bearer token
+        public string AccessToken { get; set; } //Alpha numeric value
+        public string Scope { get; set; }
     }
 }
