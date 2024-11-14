@@ -24,35 +24,9 @@ namespace API.Automation
             client.AddDefaultHeader(KnownHeaders.Authorization, apiAuth.GetT);
             client = new RestClient();
         }
-        //#region Get Methods
-        //public RestResponse GetListofUsers()
-        //{
-        //    var apiAuth = new APIAuthenticatorRead();
-        //    var options = new RestClientOptions(BASE_URL)
-        //    {
-        //        Authenticator = apiAuth
-        //    };
-        //    var client = new RestClient(options);
-        //    var request = new RestRequest(Endpoints.GET_LIST_OF_USERS, Method.Get);
-        //    //request.AddQueryParameter("olderThan", minAge, false);
-        //    //request.AddQueryParameter("sex", "MALE");      //only male as for now
-        //    //request.AddQueryParameter("youngerThan", maxAge, false);
-        //    return client.Execute(request);
-        //}
 
-        //public RestResponse GetAvailableZipCodes()
-        //{
-        //    var apiAuth = new APIAuthenticatorRead();
-        //    var options = new RestClientOptions(BASE_URL)
-        //    {
-        //        Authenticator = apiAuth
-        //    };
-        //    var client = new RestClient(options);
-        //    var request = new RestRequest(Endpoints.GET_LIST_OF_ZIP_CODES, Method.Get);
-        //    return client.Execute(request);
-        //}
-        //#endregion End of Get Methods
 
+        #region Post Methods
         public RestResponse CreateUser<T>(T payload) where T : class
         {
             var apiAuth = new APIAuthenticatorWrite();
@@ -106,13 +80,12 @@ namespace API.Automation
             request.AddStringBody(file, dataFormat);
             return await client.ExecuteAsync(request);
         }
+        #endregion End of Post methods
 
         public void Dispose()
         {
             client?.Dispose();
             GC.SuppressFinalize(this);
         }
-
-
     }
 }

@@ -35,6 +35,7 @@ namespace API.Automation.Auth
         protected override async ValueTask<Parameter> GetAuthenticationParameter(string accessToken)
         {
             Token = string.IsNullOrEmpty(Token) ? await GetToken() : Token;
+            
             return new HeaderParameter(KnownHeaders.Authorization, Token);
         }
 
@@ -46,13 +47,6 @@ namespace API.Automation.Auth
             var response = await client!.PostAsync<TokenResponse>(request);
 
             return $"{response!.TokenType} {response!.AccessToken}";
-            //var requestRead = new RestRequest("oauth/token").AddParameter("grant_type", "client_credentials").AddParameter("scope", "read", ParameterType.RequestBody);
-            //var responseRead = await client.PostAsync<TokenResponse>(requestRead);
-
-            //var requestWrite = new RestRequest("oauth/token").AddParameter("grant_type", "client_credentials").AddParameter("scope", "write", ParameterType.RequestBody );
-            //var responseWrite = await client.PostAsync<TokenResponse>(requestWrite);
-
-            //return $"{responseRead.TokenType} {responseRead.AccessToken} {responseRead.Scope} \n {responseWrite.TokenType} {responseWrite.AccessToken} {responseWrite.Scope}";
         }
     }
 }

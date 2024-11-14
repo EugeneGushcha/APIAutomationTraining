@@ -53,47 +53,11 @@ namespace API.Automation
         }
         #endregion End of Get Methods
 
-        //public RestResponse CreateUser<T>(T payload) where T : class
-        //{
-        //    var request = new RestRequest(Endpoints.CREATE_USER, Method.Post);
-        //    request.AddBody(payload);
-        //    return client.Execute(request);
-        //}
-
-        //public async Task<RestResponse> UpdateUser<T>(T payload) where T : class
-        //{
-        //    var request = new RestRequest(Endpoints.UPDATE_USER, Method.Put);
-        //    request.AddBody(payload);
-        //    return await client.ExecuteAsync<T>(request);
-        //}
-
-        //public async Task<RestResponse> DeleteUser<T>(T payload) where T : class
-        //{
-        //    var request = new RestRequest(Endpoints.DELETE_USER, Method.Delete);
-        //    request.AddBody(payload);
-        //    return await client.ExecuteAsync(request);
-        //}
-
-        //public async Task<RestResponse> PatchUpdateUser<T>(T payload) where T : class
-        //{
-        //    var request = new RestRequest(Endpoints.PATCH_UPDATE_USER, Method.Patch);
-        //    request.AddBody(payload);
-        //    return await client.ExecuteAsync<T>(request);
-        //}
-
-        //public async Task<RestResponse> UploadUsers(String file, DataFormat dataFormat)
-        //{
-        //    var request = new RestRequest(Endpoints.UPLOAD_USERS, Method.Post);
-        //    request.AddStringBody(file, dataFormat);
-        //    return await client.ExecuteAsync(request);
-        //}
 
         public void Dispose()
         {
             client?.Dispose();
             GC.SuppressFinalize(this);
-        }
-
-        
+        }  
     }
 }
