@@ -1,0 +1,6 @@
+##comment start
+Here you can provide zip codes. 
+In order to have a valid scenario result duplicate values need to be provided.
+##comment end
+03289
+03289

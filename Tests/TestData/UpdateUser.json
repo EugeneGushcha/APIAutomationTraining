@@ -1,0 +1,14 @@
+{
+  "userNewValues": {
+    "age": 0,
+    "name": "string",
+    "sex": "FEMALE",
+    "zipCode": "string"
+  },
+  "userToChange": {
+    "age": 0,
+    "name": "string",
+    "sex": "FEMALE",
+    "zipCode": "string"
+  }
+}
