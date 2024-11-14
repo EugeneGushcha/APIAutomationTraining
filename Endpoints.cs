@@ -14,5 +14,7 @@ namespace API.Automation
         public static string DELETE_USER = "/users";        //payload
         public static string PATCH_UPDATE_USER = "/users";  //payload init user and updated user
         public static string UPLOAD_USERS = "/users/upload";//json file
+        public static string GET_LIST_OF_ZIP_CODES = "/zip-codes";
+        public static string EXPAND_LIST_OF_ZIP_CODES = "/zip-codes/expand";
     }
 }

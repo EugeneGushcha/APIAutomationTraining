@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace API.Automation
 {
-    public interface IAPIClient
+    public interface IAPIClientWrite
     {
-        Task<RestResponse> GetListofUsers(int minAge, int maxAge);
-        Task<RestResponse> CreateUser<T>(T payload) where T : class;
+        
+        public RestResponse CreateUser<T>(T payload) where T : class;
         Task<RestResponse> UpdateUser<T>(T payload) where T : class;
         Task<RestResponse> DeleteUser<T>(T payload) where T : class;
         Task<RestResponse> PatchUpdateUser<T>(T payload) where T : class;
