@@ -4,7 +4,7 @@ This feature is created to validate main functionality for zip codes endpoints
 
 @positive
 Scenario: Get all available zip codes
-	When I get all zip codes with "201" response code
+	When I get all zip codes with "200" response code
 		
 @positive
 Scenario: Expand available zip codes
