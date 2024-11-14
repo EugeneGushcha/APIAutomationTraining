@@ -1,0 +1,54 @@
+Bug1:
+Title: WSC: ZipCodes: GET: Unexpected response code (status code)
+Pre-Conditions:
+Given I am an authorized user and can perform web service calls successfully.
+Steps:
+1. Perform Get request to /zip-codes endpoint
+
+Notes: 	The bug was found by auto-scenario: GetAllAvailableZipCodes
+
+Expected result: 200 response code (status code 'OK')
+Actual result: 201 response code (status code 'Created')
+
+
+Bug2:
+Title: WSC: ZipCodes: POST: Zip codes can contain characters (not digits)
+Pre-Conditions:
+Given I am an authorized user and can perform web service calls successfully.
+Steps:
+1. Expand available zip codes with a zip code containing at least one character (not digit).
+
+Notes: 	Zip codes must contain digits only.
+		The bug was found by auto-scenario: ExpandAvailableZipCodes
+
+Expected result: Zip code is not added to available zip codes.
+Actual result:Zip code is added to available zip codes.
+
+
+Bug3:
+Title: WSC: ZipCodes: POST: Available zip codes can contain duplicates
+Pre-Conditions:
+Given I am an authorized user and can perform web service calls successfully.
+And payload has duplicates zip codes.
+Steps:
+1. Expand available zip codes with a payload from Pre-Conditions
+
+Notes: 	The bug was found by auto-scenario: DublicateZipCodesInPayloadAreAddedAsASingleOne
+
+Expected result: Zip codes from payload are added to available zip codes but WITHOUT duplicates.
+Actual result: Zip codes from payload are added to available zip codes WITH duplicates.
+
+
+Bug4:
+Title: WSC: ZipCodes: POST: Already used zip codes can be added as duplicates
+Pre-Conditions:
+Given I am an authorized user and can perform web service calls successfully.
+And payload has already available zip codes.
+Steps:
+1. Expand available zip codes with a payload from Pre-Conditions
+
+Notes: 	The bug has dependency of Bug3.
+		The bug was found by auto-scenario: NewZipCodesFromPayloadAreAddedButDuplicatedAreNot
+
+Expected result: No duplicates in available zip codes.
+Actual result: Duplicates is available zip codes.
