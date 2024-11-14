@@ -28,7 +28,7 @@ namespace API.Automation.Utility
         public static string GetFilePath(string name) 
         {
             string path = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory));
-            path = string.Format(path + "TestData\\{0}", name);
+            path = string.Format(path + "Tests\\TestData\\{0}", name);
             return path;
         }
 

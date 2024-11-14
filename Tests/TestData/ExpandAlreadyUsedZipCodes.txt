@@ -2,6 +2,6 @@
 Here tou can provide zip codes. 
 In order to have a valid scenario result already available values need to be provided.
 ##comment end
-test2
-test3
+81568
+test1
 new01

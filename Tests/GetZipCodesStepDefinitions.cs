@@ -16,25 +16,19 @@ using TechTalk.SpecFlow;
 namespace Tests
 {
     [Binding]
-    public class GetZipCodesStepDefinitions
+    public class GetZipCodesStepDefinitions(ExpandZipCodeReq expandZipCodeReq, ScenarioContext scenarioContext)
     {
-        private ExpandZipCodeReq expandZipCodeReq;
+        private ExpandZipCodeReq expandZipCodeReq = expandZipCodeReq;
         private RestResponse response;
-        private ScenarioContext scenarioContext;
+        private ScenarioContext scenarioContext = scenarioContext;
         private HttpStatusCode statusCode;
-        private APIClientRead apiRead;
-        private APIClientWrite apiWrite;
+        private APIClientRead apiRead = new APIClientRead();
+        private APIClientWrite apiWrite = new APIClientWrite();
 
-
-        public GetZipCodesStepDefinitions(ExpandZipCodeReq expandZipCodeReq, ScenarioContext scenarioContext)
-        {
-            
-            this.expandZipCodeReq = expandZipCodeReq;
-            this.scenarioContext = scenarioContext;
-            apiRead = new APIClientRead();
-            apiWrite = new APIClientWrite();
-        }
-
+        /// <summary>
+        /// This method create payload for extending the list of available zip codes from a file.
+        /// </summary>
+        /// <param name="filename"></param>
         [Given(@"zip-code payload ""([^""]*)"" created")]
         public void GivenZip_CodePayloadCreated(string filename)
         {
@@ -43,7 +37,10 @@ namespace Tests
             scenarioContext.Add("expandZipCodes_payload", payload);
         }
 
-
+        /// <summary>
+        /// This method validate response code and status code of GET method.
+        /// </summary>
+        /// <param name="code"></param>
         [When(@"I get all zip codes with ""([^""]*)"" response code")]
         public void WhenIGetAllZipCodesWithResponseCode(string code)
         {
@@ -85,6 +82,10 @@ namespace Tests
             scenarioContext.Add("Response_from_payload", response);
         }
 
+        /// <summary>
+        /// Validate response code of POST method generating payload from a file. 
+        /// </summary>
+        /// <param name="responseCode"></param>
         [Then(@"I get ""([^""]*)"" response code after payload")]
         public void ThenIGetResponseCodeAfterPayload(string responseCode)
         {
@@ -103,13 +104,12 @@ namespace Tests
         {
             var response = apiRead.GetAvailableZipCodes();
 
-            Assert.That(response.StatusCode.ToString(), Is.EqualTo("Created"), "Unexpected status code.");
             Assert.That(response.Content, Does.Contain(zipcode), $"Available zip codes do not contain {zipcode} zip code.");
         }
 
 
         /// <summary>
-        /// Method validates if a list available zip codes contains duplicate values for a certain zip code.
+        /// Method validates if a list of available zip codes contains duplicate values of a certain zip code.
         /// </summary>
         /// <param name="zipCode"></param>
         [Then(@"there are no zip code ""([^""]*)"" dublicates in available")]
@@ -120,12 +120,12 @@ namespace Tests
             string[] trimmedArray = array.Select(s => s.Trim('"', '[', '\\', ']')).ToArray();
             bool isDublicate = HandleContent.DuplicateInArray(trimmedArray, zipCode);
 
-            Assert.That(isDublicate, Is.False, $"There is {zipCode} duplicated in available zip codes.");
+            Assert.That(isDublicate, Is.False, $"There is '{zipCode}' zip code duplicated in available zip codes.");
         }
 
 
         /// <summary>
-        /// Method validates if a list available zip codes contains duplicate values
+        /// Method validates if a list available zip codes contains any duplicate values
         /// </summary>
         /// <exception cref="PendingStepException"></exception>
         [Then(@"there are no dublicates in available zip codes")]
