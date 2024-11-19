@@ -8,8 +8,8 @@ Scenario: Get all available zip codes
 		
 @positive
 Scenario: Expand available zip codes
-	When Send request to expand zip code with "invalidzipcode"
-	Then I should have zip code "invalidzipcode" available
+	When Send request to expand zip code with "54321"
+	Then I should have zip code "54321" available
 
 @positive
 Scenario: Dublicate zip codes in payload are added as a single one
@@ -24,7 +24,7 @@ Scenario: New zip codes from payload are added but duplicated are not
 	Given zip-code payload "ExpandAlreadyUsedZipCodes.txt" created
 	When Send request to expand zip code with payload
 	Then I get "201" response code after payload
-	And I should have zip code "new01" available
+	And I should have zip code "04018" available
 	And there are no dublicates in available zip codes
 
 

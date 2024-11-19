@@ -107,6 +107,20 @@ namespace Tests
             Assert.That(response.Content, Does.Contain(zipcode), $"Available zip codes do not contain {zipcode} zip code.");
         }
 
+        /// <summary>
+        /// Method validates if the expected zip code does not present in available zip codes
+        /// </summary>
+        /// <param name="zipcode"></param>
+        /// <exception cref="PendingStepException"></exception>
+        [Then(@"I should not have zip code ""([^""]*)"" available")]
+        public void ThenIShouldNotHaveZipCodeAvailable(string zipcode)
+        {
+            var response = apiRead.GetAvailableZipCodes();
+
+            Assert.That(response.Content, Does.Not.Contain(zipcode), $"Available zip codes contain {zipcode} zip code.");
+        }
+
+
 
         /// <summary>
         /// Method validates if a list of available zip codes contains duplicate values of a certain zip code.

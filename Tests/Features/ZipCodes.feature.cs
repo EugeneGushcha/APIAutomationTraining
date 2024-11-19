@@ -119,10 +119,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 11
- testRunner.When("Send request to expand zip code with \"invalidzipcode\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Send request to expand zip code with \"54321\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.Then("I should have zip code \"invalidzipcode\" available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should have zip code \"54321\" available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -195,7 +195,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("I get \"201\" response code after payload", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 27
- testRunner.And("I should have zip code \"new01\" available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I should have zip code \"04018\" available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
  testRunner.And("there are no dublicates in available zip codes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

@@ -1,0 +1,13 @@
+Bug1:
+Title: WSC: Users: POST: Users with same complex key name+sex can be created
+Pre-Conditions:
+Given I am an authorized user and can perform web service calls successfully.
+Create 2 payloads with users having same both name +sex.
+Steps:
+1. Perform POST request to /users endpoint
+2. Perform POST request to /users endpoint with same name and same sex as in step 1
+
+Notes: 	The bug was found by auto-scenario: 400ResponseCodeReturnsAfterTryingToCreateAUserWithTheSameNameAndSex
+
+Expected result: 400 response code 
+Actual result: 201 response code (status code 'Created')

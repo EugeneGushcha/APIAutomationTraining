@@ -2,6 +2,24 @@
 Here tou can provide zip codes. 
 In order to have a valid scenario result already available values need to be provided.
 ##comment end
-81568
-test1
-new01
+04000
+04001
+04002
+04003
+04004
+04005
+04006
+04007
+04008
+04009
+04010
+04011
+04012
+04013
+04014
+04015
+04016
+04017
+04018
+04019
+04020

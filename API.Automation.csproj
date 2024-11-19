@@ -22,10 +22,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Tests\TestData\CreateUserUnavailableZipCode.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Tests\TestData\CreateUserValidData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Tests\TestData\ExpandAlreadyUsedZipCodes.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Tests\TestData\ExpandDuplicateZipCodes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Tests\TestData\NotUniqueUser.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

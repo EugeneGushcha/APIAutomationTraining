@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace API.Automation.Models.Response
 {
-    public  class CreateUserRes
+    public class GetAllUsersRes
     {
-        public string name {  get; set; }
+        public string name { get; set; }
         public int age { get; set; }
         public string sex { get; set; }
         public string zipCode { get; set; }
